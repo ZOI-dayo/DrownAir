@@ -1,0 +1,4 @@
+name: DrownAir
+version: @version@
+main: net.zoizoi.plugin.drownair.Main
+api-version: 1.15
