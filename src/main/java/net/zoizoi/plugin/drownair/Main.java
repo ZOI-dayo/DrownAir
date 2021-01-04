@@ -19,11 +19,13 @@ public final class Main extends JavaPlugin {
         // Plugin startup logic
         commandManager = new CommandManager(this);
         commandManager.addRootCommand(new DrownAirCommand(commandManager));
-        logic = new PluginLogic();
+        logic = new PluginLogic(this);
+        getServer().getPluginManager().registerEvents(logic,this);
     }
 
     @Override
     public void onDisable() {
         // Plugin shutdown logic
+        logic.End();
     }
 }
