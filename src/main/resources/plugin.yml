@@ -2,3 +2,14 @@ name: DrownAir
 version: @version@
 main: net.zoizoi.plugin.drownair.Main
 api-version: 1.15
+commands:
+  drownair:
+    aliases: da
+    description: DrownAir setting command
+    usage: "Usage: /<command>"
+    permission: drownair.admin
+    permission-message: You dont't have <permission>
+permissions:
+  drownair.admin:
+    description: Operator permission
+    default: op
