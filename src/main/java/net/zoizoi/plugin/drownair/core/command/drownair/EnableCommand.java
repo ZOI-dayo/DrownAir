@@ -1,9 +1,11 @@
 package net.zoizoi.plugin.drownair.core.command.drownair;
 
+import net.zoizoi.plugin.drownair.Main;
 import net.zoizoi.plugin.drownair.core.command.CommandManager;
 import net.zoizoi.plugin.drownair.core.command.CommandMaster;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
+import org.bukkit.entity.Player;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -15,7 +17,7 @@ public class EnableCommand extends CommandMaster {
 
     @Override
     public String getName() {
-        return "start";
+        return "enable";
     }
 
     @Override
@@ -25,7 +27,8 @@ public class EnableCommand extends CommandMaster {
 
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
-        return false;
+        ((Main) manager.plugin).logic.putDrownPlayer((Player) sender);
+        return true;
     }
 
     @Override

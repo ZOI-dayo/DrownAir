@@ -25,12 +25,7 @@ public class HelpCommand extends CommandMaster {
     }
 
     @Override
-    public boolean onCommand(
-            CommandSender sender,
-            Command command,
-            String label,
-            String[] args
-    ) {
+    public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
         sender.sendMessage("---DrownAir---");
         sender.sendMessage("/drownair help : このメニューを開く");
         sender.sendMessage("/drownair enable : 有効化");
