@@ -59,18 +59,18 @@ public class CommandManager implements TabExecutor {
          */
 
         // if(args.length <= 1){
-        CommandMaster rootCommannd = rootCommands.get(label);
-        // rootCommannd.onCommand(sender, command, label, args);
+        CommandMaster rootCommand = rootCommands.get(command.getName());
+        // rootCommand.onCommand(sender, command, label, args);
         // }
 
         // SubCommand subCommand = subCommands.get(args[0]);
 /*
-        if (rootCommannd.getPermission() != null && !sender.hasPermission(rootCommannd.getPermission())) {
+        if (rootCommand.getPermission() != null && !sender.hasPermission(rootCommand.getPermission())) {
             sender.sendMessage(I18n.tl("error.command.permission"));
             return false;
         }
         */
-        if (!rootCommannd.onCommand(sender, command, label, args)) return onCommandImpl(sender, command, label, args);
+        if (!rootCommand.onCommand(sender, command, label, args)) return onCommandImpl(sender, command, label, args);
 
         return true;
     }
@@ -82,7 +82,7 @@ public class CommandManager implements TabExecutor {
         args = compiledArgs.toArray(new String[0]);
 
 
-        List<String> commands = new ArrayList<>(rootCommands.keySet());
+        // List<String> commands = new ArrayList<>(rootCommands.keySet());
 
         // plugin.getLogger().info("args:" + Arrays.toString(args));
         // plugin.getLogger().info("args.length:" + args.length);
